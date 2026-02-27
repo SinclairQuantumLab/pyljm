@@ -68,11 +68,14 @@ This work put a massive effort on the code style for a good reason.
   def my_obj(self, value): self._my_obj = value
   ```
 
-- Wrap finite, pre-defined argument values of functions/methods in `Enum` whenever possible.
+- Wrap finite, pre-defined argument values of functions/methods in `Enum` whenever possible. They are usually defined in `_ljm_aux.py` because it should act like global objects which can be acheived by putting `import _ljm_aux` in all the other script files.
 
+    ```python
+    # Example: Enum that lists the supported connection methods
+    class LabJackConnectionTypeEnum(Enum):
+        USB = ljm.constants.ctUSB
+        ETHERNET = ljm.constants.ctETHERNET
+        WIFI = ljm.constants.ctWIFI
+    ```
 
-
-
-
-
-
+    See [this section](#stucture-usage--implementation-guide) to for see example on how it is used.
