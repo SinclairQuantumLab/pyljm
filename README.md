@@ -4,7 +4,7 @@ The official python wrapper in `labjack-ljm` package is is a literal translation
 
 The goal of this project is to wrap the official wrapper one more time and use LabJacks with pythonic codes.
 
-Let's comply with [PEP 8 Style Guide for Python Code](https://peps.python.org/pep-0008/) as much as possible. Particular focuses on this aspect are highlighted in [Code Style](##code-style) section.
+Let's comply with [PEP 8 Style Guide for Python Code](https://peps.python.org/pep-0008/) as much as possible. Particular focuses on this aspect are highlighted in [Code Style](#code-style) section.
 
 
 ## Stucture, usage & implementation guide
