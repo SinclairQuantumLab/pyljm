@@ -22,7 +22,7 @@ Let's comply with [PEP 8 Style Guide for Python Code](https://peps.python.org/pe
         )
     ```
 
-- Each function of LabJack (e.g., stream_in) is to be implemented in its own internal script file (`StreamIn` class defined in `_stream_in.py`). Initiating the functions should be done by calling the corresponding `LabJackDevice` methods, and the results of the function will be returned an instance of the functions class.
+- Each function of LabJack (e.g., stream_in) is to be implemented in its own internal script file (`StreamIn` class defined in `_stream_in.py`). Initiating the functions should be done by calling the corresponding `LabJackDevice` methods, and the results of the function (e.g., a measured stream of input voltages) should be contained in the instance of the functions class that the `LabJackDevice` method returns.
 
     ```python
     # Example: triggered input stream
@@ -40,12 +40,12 @@ Let's comply with [PEP 8 Style Guide for Python Code](https://peps.python.org/pe
 
 ## Code style
 
-This work put a massive effort on the code style for a good reason.
+This work put a massive effort on the code style.
 
 - Thorough and explicit type checking
-- Very aware of [naming conventions](https://peps.python.org/pep-0008/#naming-conventions)
-  - It is not about just naming but explicit designation of the variabls' rules and access scope! Some examples :
-    - Typical variable: lowercas
+- Highly compliant with [naming conventions](https://peps.python.org/pep-0008/#naming-conventions)
+  - It is not only about naming but explicit designation of the variabls' rules and access scope! Some examples :
+    - Typical variable: lowercase
     - Constant: UPPERCASE
     - Class: CapWords in general. Exceptional cases exist (e.g., naming for `Exception`s).
     - Access modifiers for variables and functions/methods, and script files: python interpreter doesn't care but still nice to be considerate.
@@ -53,9 +53,9 @@ This work put a massive effort on the code style for a good reason.
       - protected: _(name) (single underscores at the beginning)
       - private: __(name) (double underscores at the beginning)
       - Particular focuses here:
-        - Only the properties and methods that will be used by user (i.e., called from outside the top-level class) should be named as public.
+        - Only the properties and methods that shall be accessed or called by user should be named as public.
         - Internal variables and methods should be named as `protected`.
-        - `Eunm` is a class and thus has name with CapWords form.
+        - `Enum` is a class and thus has name with CapWords form.
     - Avoid using any forms that are reserved for other things in the style guide.
 - Clear distinction between and implementation of properties and internal variables of classes.
   - (read-only) properties is set by defining their getters using `@property` decorator. Actual data should be stored in the corresponding internal variables named with `_my_obj` form.
