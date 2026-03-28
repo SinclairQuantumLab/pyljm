@@ -1,6 +1,6 @@
 # Pythonic Labjack library
 
-The official python wrapper in `labjack-ljm` package is is a literal translation of its native C API rather than *paraphrasing* it in pythonic way. It makes the wrapper horrible to comprehend and use. 
+The official python wrapper in `labjack-ljm` package is a literal translation of its native C API rather than *paraphrasing* it in pythonic way. It makes the wrapper horrible to comprehend and use. 
 
 The goal of this project is to wrap the official wrapper one more time and use LabJacks with pythonic codes.
 
